@@ -41,3 +41,19 @@ const config: HardhatUserConfig = {
 };
 
 export default config;
+
+require("@nomiclabs/hardhat-waffle");
+
+const ALCHEMY_API_KEY = "gkVzQUnA5QSB3Xg7GE7YQunl36stBwu6";
+
+const GOERLI_PRIVATE_KEY = "d6f3c7f89e966425b9e8f46dc13dfb5274462a77963fcc6256327f8c5e78c10e";
+
+module.exports = {
+  solidity: "0.8.9",
+  networks: {
+    goerli: {
+      url: `https://eth-goerli.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
+      accounts: [GOERLI_PRIVATE_KEY]
+    }
+  }
+};
